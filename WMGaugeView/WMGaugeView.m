@@ -142,7 +142,16 @@
                            rangeLabelsRect.size.width - 2 * _scalePosition,
                            rangeLabelsRect.size.height - 2 * _scalePosition);
 }
-
+-(void)setFrame:(CGRect)frame {
+    [super setFrame:frame];
+    [self invalidateNeedle];
+    [self invalidateBackground];
+}
+-(void)setBounds:(CGRect)bounds {
+    [super setBounds:bounds];
+    [self invalidateNeedle];
+    [self invalidateBackground];
+}
 #pragma mark - Drawing
 
 /**
